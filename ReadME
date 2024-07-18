@@ -1,0 +1,34 @@
+Serializable and Deserializable
+
+
+Introduction
+
+Serialization and deserialization are processes that enable the conversion of complex data structures, like objects, into a format that can be easily stored and transmitted, and then reconstructed back into the original structure. In Java, serialization is the process of converting an object into a byte stream, and deserialization is the reverse process, where the byte stream is used to recreate the original object.
+
+Advantages
+Serialization and deserialization have the following main advantages:
+01.	Persistence         : Items have the ability to be saved and then restored from files or databases.
+02.	Communication : Across a network, serialized items can be sent between various dispersed system components.
+03.	Caching              : By reducing the need to create serialized items repeatedly, caching can enhance speed.
+04.	Deep Copy	    : An item can be deeply copied using serialization.
+
+Mechanism
+The Serializable interface, together with the classes ObjectOutputStream and ObjectInputStream, are involved in the Java serialization and deserialization method.
+
+Serialization of Information
+01.	The ObjectOutputStream class is used to transform an object into a byte stream.
+02.	The Serializable interface needs to be implemented by the object.
+03.	Transient-marked fields are not serialized.
+
+De-serialization of Information:
+
+01.	The ObjectInputStream class is used to transform the byte stream back into an object.
+02.	The object is rebuilt throughout the deserialization process, including its non-transient fields.
+
+Example Code GitHub Repository
+Github Repo : https://github.com/chulakasam/Serializable-Deserializable.git
+Explanation of the code
+The Serializable interface is implemented by the Person class.
+Password fields are not serialized and are designated as temporary.
+The primary technique for serializing and deserializing a Person object is contained in the SerializationDemo class.
+The object is first serialized into the person.ser file, from which it is subsequently deserialized.
